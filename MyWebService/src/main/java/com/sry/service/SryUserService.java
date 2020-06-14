@@ -36,7 +36,7 @@ public class SryUserService {
 		}
 		ret =  "success = "+success+" failed "+fail+" "+error;
 		return ret;
-	}
+	} 
 	
 	public List<SryUser> getUserByUserName(String username) {
 		List<SryUser> sryUserList = new ArrayList<SryUser>();

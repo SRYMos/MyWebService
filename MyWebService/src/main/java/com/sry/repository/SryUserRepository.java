@@ -39,4 +39,15 @@ public class SryUserRepository {
 		}
 		return ret;
 	}
+	
+	public List<SryUser> getUserByUserName(String username) {
+		List<SryUser> sryUserList = new ArrayList<SryUser>();
+		try {
+			String sql = "select * from sry_user u where u.user_name = "+username;
+			sryUserList = jdbcTemplate.query(sql,new SryUserRowMapper());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sryUserList;
+	}
 }

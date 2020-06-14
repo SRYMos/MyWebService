@@ -1,5 +1,6 @@
 package com.sry.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,15 @@ public class SryUserService {
 		}
 		ret =  "success = "+success+" failed "+fail+" "+error;
 		return ret;
+	}
+	
+	public List<SryUser> getUserByUserName(String username) {
+		List<SryUser> sryUserList = new ArrayList<SryUser>();
+		try {
+			sryUserList = sryUserRepository.getUserByUserName(username);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sryUserList;
 	}
 }

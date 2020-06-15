@@ -24,6 +24,6 @@ public class WebAppUserController {
 	@GetMapping("/user/{id}")
 	public String getUser(@PathVariable int id,Model model) {
 		model.addAttribute("user",sryUserService.getUserById(id));
-		return "home";
+		return "user";
 	}
 }

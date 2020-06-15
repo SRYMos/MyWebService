@@ -51,8 +51,4 @@ public class WebServiceUserController {
 		sryUserList.add(sryUser);
 		return sryUserService.addUser(sryUserList);
 	}
-
-	public void setSryUserService(SryUserService sryUserService) {
-		this.sryUserService = sryUserService;
-	}
 }

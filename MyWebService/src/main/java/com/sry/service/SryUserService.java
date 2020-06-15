@@ -47,4 +47,17 @@ public class SryUserService {
 		}
 		return sryUserList;
 	}
+	
+	public SryUser getUserById(int id) {
+		SryUser sryUser = new SryUser();
+		try {
+			List<SryUser> sryUserList =  sryUserRepository.getUserById(id);
+			if(sryUserList != null && sryUserList.size() > 0) {
+				sryUser = sryUserList.get(0);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sryUser;
+	}
 }

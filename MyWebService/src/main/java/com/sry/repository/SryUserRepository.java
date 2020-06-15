@@ -50,4 +50,15 @@ public class SryUserRepository {
 		}
 		return sryUserList;
 	}
+	
+	public List<SryUser> getUserById(int id) {
+		List<SryUser> sryUserList = new ArrayList<SryUser>();
+		try {
+			String sql = "select * from sry_user u where u.id = "+id;
+			sryUserList = jdbcTemplate.query(sql,new SryUserRowMapper());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sryUserList;
+	}
 }
